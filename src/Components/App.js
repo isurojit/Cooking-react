@@ -1,7 +1,6 @@
 import React from "react";
-import "./App.css";
-
-import RecipeList from "./Recipe/RecipeList";
+import "../Styling/app.css";
+import RecipeList from "../Recipe/RecipeList";
 
 const App = () => {
   return (
