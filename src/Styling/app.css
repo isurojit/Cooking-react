@@ -2,6 +2,8 @@
 @import "./fonts.css";
 @import "./recipelist.css";
 @import "./buttons.css";
+@import "./recipe.css";
+@import "./ingredientList.css";
 
 *,
 *::after,
@@ -16,4 +18,8 @@ html {
 body {
   padding: 0;
   margin: 0;
+}
+
+.mr-1 {
+  margin-right: 5px;
 }
