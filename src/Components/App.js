@@ -40,6 +40,8 @@ const sampleRecipeList = [
         amount: "50 gm",
       },
     ],
+    image:
+      "https://cook.fnr.sndimg.com/content/dam/images/cook/fullset/2012/7/15/0/FN_Ultimate-BBQ-Chicken_s4x3.jpg.rend.hgtvcom.616.462.suffix/1372185433827.jpeg",
   },
   {
     id: 2,
@@ -70,6 +72,8 @@ const sampleRecipeList = [
         amount: "100 gm",
       },
     ],
+    image:
+      "https://images-gmi-pmc.edge-generalmills.com/331fb539-79c0-4664-b1f6-1107d8cc8bef.jpg",
   },
 ];
 export default App;
