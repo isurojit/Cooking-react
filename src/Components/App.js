@@ -3,6 +3,8 @@ import "../Styling/app.css";
 import RecipeList from "../Recipe/RecipeList";
 import { v4 as uuidv4 } from "uuid";
 
+export const RecipeContex = React.createContext();
+
 const App = () => {
   const [recipe, setRecipe] = useState(sampleRecipeList);
 
@@ -28,14 +30,15 @@ const App = () => {
     setRecipe(recipe.filter((rec) => rec.id !== id));
   }
 
+  const recipeContexValue = {
+    recipeAddHandler, //recipeAddHandler: recipeAddHandler,
+    recipeDeleteHandler, //recipeDeleteHandler: recipeDeleteHandler,
+  };
+
   return (
-    <>
-      <RecipeList
-        recipes={recipe}
-        recipeAddHandler={recipeAddHandler}
-        recipeDeleteHandler={recipeDeleteHandler}
-      />
-    </>
+    <RecipeContex.Provider value={recipeContexValue}>
+      <RecipeList recipes={recipe} />
+    </RecipeContex.Provider>
   );
 };
 
