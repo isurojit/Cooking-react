@@ -24,9 +24,9 @@ const App = () => {
     setRecipe([...recipe, newRecipe]);
   };
 
-  const recipeDeleteHandler = (id) => {
+  function recipeDeleteHandler(id) {
     setRecipe(recipe.filter((rec) => rec.id !== id));
-  };
+  }
 
   return (
     <>

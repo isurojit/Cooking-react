@@ -3,6 +3,7 @@ import IngredientList from "./IngredientList";
 
 export default function Recipe(props) {
   const {
+    id,
     name,
     cookTime,
     servings,
@@ -16,7 +17,10 @@ export default function Recipe(props) {
         <h3 className="recipe__header-title">{name}</h3>
         <div>
           <button className="btn btn--primary mr-1">Edit</button>
-          <button className="btn btn--danger" onClick={recipeDeleteHandler}>
+          <button
+            className="btn btn--danger"
+            onClick={() => recipeDeleteHandler(id)}
+          >
             Delete{" "}
           </button>
         </div>
