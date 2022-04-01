@@ -10,15 +10,15 @@ const App = () => {
   const [recipe, setRecipe] = useState(sampleRecipeList);
 
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipe));
-  }, [recipe]);
-
-  useEffect(() => {
     const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (recipeJSON != null) {
       setRecipe(JSON.parse(recipeJSON));
     }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipe));
+  }, [recipe]);
 
   const recipeAddHandler = () => {
     const newRecipe = {
