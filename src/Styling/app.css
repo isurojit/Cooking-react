@@ -4,11 +4,13 @@
 @import "./buttons.css";
 @import "./recipe.css";
 @import "./ingredientList.css";
+@import "./recipe-edit.css";
 
 *,
 *::after,
 *::before {
   font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;
 }
 
 html {
