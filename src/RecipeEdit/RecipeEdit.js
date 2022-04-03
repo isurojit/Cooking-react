@@ -47,15 +47,14 @@ const RecipeEdit = () => {
       </div>
       <br />
       <label className="recipe-edit__label">Ingredients</label>
-      <div className="recipe-edit__ingredient-label">
+      <div className="recipe-edit__ingredient-grid">
         <div>Name</div>
         <div>Amount</div>
         <div></div>
-        <div>
-          <RecipeIngredientEdit />
-          <RecipeIngredientEdit />
-        </div>
+        <RecipeIngredientEdit />
+        <RecipeIngredientEdit />
       </div>
+
       <div className="recipe-edit__add-ingredient-btn-container">
         <button className="btn btn--primary">Add Ingredients</button>
       </div>

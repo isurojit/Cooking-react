@@ -1,0 +1,33 @@
+body::-webkit-scrollbar,
+.recipe-edit::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track,
+.recipe-edit::-webkit-scrollbar-track {
+  border-radius: px;
+  background: #c9cacc;
+}
+
+body::-webkit-scrollbar-track:hover,
+.recipe-edit::-webkit-scrollbar-track:hover {
+  background: #78797a;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #3d5585;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #01143b;
+}
+
+.recipe-edit::-webkit-scrollbar-thumb {
+  background: #b98e00;
+  border-radius: 10px;
+}
+
+.recipe-edit::-webkit-scrollbar-thumb:hover {
+  background: #0055ff;
+}

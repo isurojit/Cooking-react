@@ -5,6 +5,7 @@
 @import "./recipe.css";
 @import "./ingredientList.css";
 @import "./recipe-edit.css";
+@import "./scroll-bar.css";
 
 *,
 *::after,
