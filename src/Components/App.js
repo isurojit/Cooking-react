@@ -49,10 +49,18 @@ const App = () => {
     setselectedRecipeId(id);
   };
 
+  const recipeChangeHandler = (id, recipes) => {
+    const newRecipe = [...recipe];
+    const index = newRecipe.findIndex((r) => r.id === id);
+    newRecipe[index] = recipes;
+    setRecipe(newRecipe);
+  };
+
   const recipeContexValue = {
     recipeAddHandler, //recipeAddHandler: recipeAddHandler,
     recipeDeleteHandler, //recipeDeleteHandler: recipeDeleteHandler,
     recipeSelectHandler,
+    recipeChangeHandler,
   };
 
   return (
