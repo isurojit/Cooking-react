@@ -27,22 +27,26 @@ const App = () => {
   const recipeAddHandler = () => {
     const newRecipe = {
       id: uuidv4(),
-      name: "New",
-      servings: 1,
-      cookTime: "1:00",
-      instructions: "nothing",
+      name: "",
+      servings: 0,
+      cookTime: "",
+      instructions: "",
       ingredients: [
         {
           id: uuidv4(),
-          name: "new",
-          amount: "1 gm",
+          name: "",
+          amount: "",
         },
       ],
     };
+    setselectedRecipeId(newRecipe.id);
     setRecipe([...recipe, newRecipe]);
   };
 
   function recipeDeleteHandler(id) {
+    if (selectedRecipeId != null && selectedRecipeId === id) {
+      setselectedRecipeId(undefined);
+    }
     setRecipe(recipe.filter((rec) => rec.id !== id));
   }
   const recipeSelectHandler = (id) => {
