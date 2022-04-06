@@ -4,6 +4,18 @@ import RecipeIngredientEdit from "./RecipeIngredientEdit";
 
 const RecipeEdit = ({ recipe }) => {
   const { recipeChangeHandler } = useContext(RecipeContex);
+
+  const changeHandler = (change) => {
+    recipeChangeHandler(recipe.id, { ...recipe, ...change });
+  };
+
+  const recipeIngredientChangeHandler = (id, ingredient) => {
+    const newRecipeIngredient = [...recipe.ingredients];
+    const index = newRecipeIngredient.findIndex((i) => i.id === id);
+    newRecipeIngredient[index] = ingredient;
+    changeHandler({ ingredients: newRecipeIngredient });
+  };
+
   return (
     <div className="recipe-edit">
       <div className="recipe-edit__remove-button-container">
@@ -19,6 +31,7 @@ const RecipeEdit = ({ recipe }) => {
           name="name"
           id="name"
           value={recipe.name}
+          onInput={(e) => changeHandler({ name: e.target.value })}
         />
         <label className="recipe-edit__label" htmlFor="cookTime">
           Cook Time
@@ -29,6 +42,7 @@ const RecipeEdit = ({ recipe }) => {
           name="cookTime"
           id="cookTime"
           value={recipe.cookTime}
+          onInput={(e) => changeHandler({ cookTime: e.target.value })}
         />
         <label className="recipe-edit__label" htmlFor="servings">
           Servings
@@ -40,6 +54,9 @@ const RecipeEdit = ({ recipe }) => {
           id="servings"
           min="1"
           value={recipe.servings}
+          onInput={(e) =>
+            changeHandler({ servings: parseInt(e.target.value) || 0 })
+          }
         />
         <label className="recipe-edit__label" htmlFor="instructions">
           Instructions
@@ -49,6 +66,7 @@ const RecipeEdit = ({ recipe }) => {
           name="instructions"
           id="instructions"
           value={recipe.instructions}
+          onInput={(e) => changeHandler({ instructions: e.target.value })}
         ></textarea>
       </div>
       <br />
@@ -58,7 +76,11 @@ const RecipeEdit = ({ recipe }) => {
         <div>Amount</div>
         <div></div>
         {recipe.ingredients.map((ingredient) => (
-          <RecipeIngredientEdit key={ingredient.id} ingredient={ingredient} />
+          <RecipeIngredientEdit
+            key={ingredient.id}
+            ingredient={ingredient}
+            recipeIngredientChangeHandler={recipeIngredientChangeHandler}
+          />
         ))}
       </div>
 
