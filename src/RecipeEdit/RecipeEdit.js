@@ -113,6 +113,12 @@ const RecipeEdit = ({ recipe }) => {
         >
           Add Ingredients
         </button>
+        <button
+          className="btn btn--danger"
+          onClick={() => recipeSelectHandler(undefined)}
+        >
+          Cancel
+        </button>
       </div>
     </div>
   );
