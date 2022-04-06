@@ -28,7 +28,7 @@ const RecipeEdit = ({ recipe }) => {
 
   function deleteIngredientHandler(id) {
     changeHandler({
-      ingredients: recipe.ingredients.filter((i) => i.id !== id),
+      ingredients: recipe.ingredients.filter((ing) => ing.id !== id),
     });
   }
 
